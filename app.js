@@ -11,7 +11,6 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
 
-  
   if (url === '/') {
     res.write('<html>');
     res.write('<head><title>Enter Message</title></head>');
@@ -31,6 +30,7 @@ const server = http.createServer((req, res) => {
     return req.on('end', () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
+
       fs.writeFile('message.txt', message, err => {
         if (err) {
           alert('BROKEN BITCH!!!');
