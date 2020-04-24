@@ -1,0 +1,20 @@
+{
+  "name": "nodeproject",
+  "version": "1.0.0",
+  "description": "First Node App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chasestory/NodeApp.git"
+  },
+  "author": "Chase Story",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chasestory/NodeApp/issues"
+  },
+  "homepage": "https://github.com/chasestory/NodeApp#readme"
+}
