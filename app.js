@@ -1,4 +1,4 @@
-const http = require('http');
+// const http = require('http');
 const express = require('express');
 // const routes = require('./routes');
 const app = express();
@@ -19,8 +19,8 @@ app.use((req, res, next) => {
 const hostname = '127.0.0.1';
 const port = '3000';
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
