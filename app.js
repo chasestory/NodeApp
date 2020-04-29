@@ -1,25 +1,20 @@
-// const http = require('http');
 const express = require('express');
-// const routes = require('./routes');
 const app = express();
 
-app.use((req, res, next) => {
-    console.log("we are here first");
-    next();
-});
+const shopRoutes = require('./routes/shop');
+const adminRoutes = require('./routes/admin');
+const bodyParser = require("body-parser");
 
-app.use((req, res, next) => {
-    console.log("we are here second");
-    res.send("<h1>Hello From yo momma</h1>");
-});
+app.use(bodyParser.urlencoded({extended: false}));
 
+app.use(adminRoutes);
 
+app.use(shopRoutes);
 
+// const server = http.createServer(app);
 
 const hostname = '127.0.0.1';
 const port = '3000';
-
-// const server = http.createServer(app);
 
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
