@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 
@@ -11,7 +12,8 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    res.status(404).send('<h1>Page not found! You should probably not be here</h1>');
+    res.sendFile(path.join( __dirname, 'views', '404.html'));
+    // res.status(404).send('<h1>Page not found! You should probably not be here</h1>');
 });
 
 const hostname = '127.0.0.1';
